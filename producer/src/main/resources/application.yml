@@ -1,0 +1,10 @@
+spring:
+  application:
+    name: producer
+  kafka:
+    producer:
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer  # для JSON
+
+server:
+  port: 8080
+
