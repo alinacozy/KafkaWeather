@@ -13,7 +13,7 @@ public class WeatherInfo {
     City city;
 
     int temperature;
-    
+
     WeatherCondition condition;
 
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")

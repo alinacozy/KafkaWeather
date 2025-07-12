@@ -17,7 +17,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 @EnableScheduling
 public class WeatherProducer {
-    private final KafkaTemplate<String, WeatherInfo> kafkaTemplate; 
+    private final KafkaTemplate<String, WeatherInfo> kafkaTemplate;
     private static final String weatherTopic = "weather";
     private final WeatherGenerator generator;
 
@@ -29,6 +29,6 @@ public class WeatherProducer {
             WeatherInfo weather = generator.generateRandomWeather(currentDate, city);
             kafkaTemplate.send(weatherTopic, city.name(), weather);
         }
-        currentDate=currentDate.plusDays(1);
+        currentDate = currentDate.plusDays(1);
     }
 }

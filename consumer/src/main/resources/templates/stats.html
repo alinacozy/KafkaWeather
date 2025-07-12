@@ -1,14 +1,18 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
     <title>Погодная статистика</title>
     <style>
-        table, th, td {
+        table,
+        th,
+        td {
             border: 1px solid black;
             border-collapse: collapse;
         }
     </style>
 </head>
+
 <body>
     <h1>Weather Statistics</h1>
 
@@ -41,15 +45,16 @@
 
     <p>
         <strong>Hottest day:</strong>
-        <span th:text="${stats.hottestDay}"></span> in 
-        <span th:text="${stats.hottestDayCity}"></span>: 
+        <span th:text="${stats.hottestDay}"></span> in
+        <span th:text="${stats.hottestDayCity}"></span>:
         <span th:text="${stats.hottestTemp}"></span> °C
     </p>
     <p>
         <strong>Coldest day:</strong>
-        <span th:text="${stats.coldestDay}"></span> in 
-        <span th:text="${stats.coldestDayCity}"></span>: 
+        <span th:text="${stats.coldestDay}"></span> in
+        <span th:text="${stats.coldestDayCity}"></span>:
         <span th:text="${stats.coldestTemp}"></span> °C
     </p>
 </body>
+
 </html>

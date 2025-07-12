@@ -20,7 +20,6 @@ public class WeatherGenerator {
                 city,
                 random.nextInt(50) - 10, // температура от -40 до +40
                 CONDITIONS[random.nextInt(CONDITIONS.length)], // случайное состояние погоды
-                date
-        );
+                date);
     }
 }

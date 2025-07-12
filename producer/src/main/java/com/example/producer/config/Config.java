@@ -13,7 +13,6 @@ import org.springframework.kafka.core.DefaultKafkaProducerFactory;
 import org.springframework.kafka.core.KafkaTemplate;
 import java.util.Map;
 
-
 @Configuration
 public class Config {
 

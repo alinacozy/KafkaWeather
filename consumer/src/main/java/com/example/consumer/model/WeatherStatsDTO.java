@@ -5,12 +5,12 @@ import java.util.Map;
 
 import lombok.Data;
 
-@Data  // Lombok аннотация
+@Data
 public class WeatherStatsDTO {
     private LocalDate today;
     private Map<City, Double> avgTempByCity;
     private Map<City, String> mostCommonCondition;
-    
+
     private String hottestDayCity;
     private LocalDate hottestDay; 
     private int hottestTemp;

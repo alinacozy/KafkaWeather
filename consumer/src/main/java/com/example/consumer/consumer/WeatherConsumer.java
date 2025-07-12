@@ -14,7 +14,7 @@ import lombok.extern.slf4j.Slf4j;
 public class WeatherConsumer {
 
     private static final String weatherTopic = "weather";
-    private static final String weatherGroup="weather-group";
+    private static final String weatherGroup = "weather-group";
 
     @Autowired
     private WeatherStatsService statsService;
@@ -22,13 +22,13 @@ public class WeatherConsumer {
     @KafkaListener(topics = weatherTopic, groupId = weatherGroup)
     public void consume(WeatherInfo weatherInfo) {
         try {
-            log.info("Received weather for {} at {}: {}°C, {}", 
-                weatherInfo.getCity(), 
-                weatherInfo.getDate(),
-                weatherInfo.getTemperature(), 
-                weatherInfo.getCondition());
-            statsService.addWeatherData(weatherInfo); 
-            
+            log.info("Received weather for {} at {}: {}°C, {}",
+                    weatherInfo.getCity(),
+                    weatherInfo.getDate(),
+                    weatherInfo.getTemperature(),
+                    weatherInfo.getCondition());
+            statsService.addWeatherData(weatherInfo);
+
         } catch (Exception e) {
             log.error("Processing error: {}", e.getMessage());
             throw e;
