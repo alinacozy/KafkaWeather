@@ -4,6 +4,10 @@ spring:
   kafka:
     producer:
       value-serializer: org.springframework.kafka.support.serializer.JsonSerializer  # для JSON
+      properties:
+        "[spring.json.value.default.type]": com.example.consumer.model.WeatherInfo
+        "[spring.json.trusted.packages]": "com.example.consumer.model"
+        "[spring.json.date-format]": "yyyy-MM-dd" 
 
 server:
   port: 8080
